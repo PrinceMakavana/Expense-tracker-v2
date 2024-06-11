@@ -36,10 +36,10 @@ function ExpenseList() {
         />
       </Box>
       <Divider className='divider-bottom' />
-      <Container maxWidth='xl'>
-        <Grid container spacing={3}>
+      <Container maxWidth='xl' style={{padding : '16px'}}>
+        <Box >
           <ExpenseDataTable />
-        </Grid>
+        </Box>
       </Container>
     </>
   );

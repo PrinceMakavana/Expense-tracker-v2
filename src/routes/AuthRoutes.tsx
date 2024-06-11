@@ -8,7 +8,10 @@ const Groups = lazy(() => import("../pages/groupPages"));
 const Profile = lazy(() => import("./../pages/Profile"));
 const GroupDetails = lazy(() => import("../pages/groupPages/GroupDetails"));
 const ExpenseList = lazy(() => import("../pages/expensePages"));
+const IncomeList = lazy(() => import("../pages/incomePages"));
 const ProfileUpdateForm = lazy(() => import("../components/profile/ProfileUpdateForm"));
+
+const InvestmentList = lazy(() => import("../pages/investmentPages"));
 
 
 const AuthRoutes: ReactNode[] = [
@@ -17,6 +20,17 @@ const AuthRoutes: ReactNode[] = [
     path='/dashboard'
     element={<AuthGuards component={DashBoard} />}
   />,
+  <Route
+    key='IncomeList'
+    path='/IncomeList'
+    element={<AuthGuards component={IncomeList} />}
+  />,
+  <Route
+    key='InvestmentList'
+    path='/InvestmentList'
+    element={<AuthGuards component={InvestmentList} />}
+  />,
+  
   <Route
     key='Dashboard'
     path='/profile'

@@ -66,12 +66,12 @@ function ExpenseDataTable() {
           <Table sx={{ minWidth: 500 }} aria-label='custom pagination table'>
             <TableHead>
               <TableRow>
-                <StyledTableCell>Title</StyledTableCell>
-                <StyledTableCell>Paid by</StyledTableCell>
-                <StyledTableCell>Amount</StyledTableCell>
-                <StyledTableCell>Owes</StyledTableCell>
-                <StyledTableCell>Actions</StyledTableCell>
-                <StyledTableCell align='right'>Settle Up</StyledTableCell>
+                <StyledTableCell align='center'>Title</StyledTableCell>
+                <StyledTableCell align='center'>Paid by</StyledTableCell>
+                <StyledTableCell align='center'>Amount</StyledTableCell>
+                <StyledTableCell align='center'>Actions</StyledTableCell>
+                <StyledTableCell align='center'>Owes</StyledTableCell>
+                <StyledTableCell align='center'>Settle Up</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -83,10 +83,10 @@ function ExpenseDataTable() {
                 : expenseList
               ).map((row, index) => (
                 <TableRow key={index}>
-                  <TableCell scope='row'>{row.title}</TableCell>
-                  <TableCell>{row.paid_by}</TableCell>
-                  <TableCell>{row.expense_amount}</TableCell>
-                  <TableCell style={{ minWidth: 170 }}>
+                  <TableCell align='center' scope='row'>{row.title}</TableCell>
+                  <TableCell align='center'>{row.paid_by}</TableCell>
+                  <TableCell align='center'>{row.expense_amount}</TableCell>
+                  <TableCell align='center' style={{ minWidth: 170 }}>
                     {!row.isSettle && (
                       <AddExpenseForm
                         ModelButtonStyle={{
@@ -117,8 +117,8 @@ function ExpenseDataTable() {
                       <VisibilityIcon />
                     </Button>
                   </TableCell>
-                  <TableCell>{row.expense_amount}</TableCell>
-                  <TableCell style={{ minWidth: 150 }} align='right'>
+                  <TableCell align='center'>{row.expense_amount}</TableCell>
+                  <TableCell  align='center' style={{ minWidth: 150 }} >
                     {row.isSettle ? (
                       <Button
                         onClick={() => openModel(row)}
@@ -141,7 +141,7 @@ function ExpenseDataTable() {
               ))}
               {emptyRows > 0 && (
                 <TableRow style={{ height: 53 * emptyRows }}>
-                  <TableCell colSpan={6} />
+                  <TableCell align='center' colSpan={6} />
                 </TableRow>
               )}
             </TableBody>
